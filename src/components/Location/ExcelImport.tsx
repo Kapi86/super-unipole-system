@@ -83,11 +83,13 @@ export default function ExcelImport({ isOpen, onClose, onImport }: ExcelImportPr
           handleClose()
         }, 2000)
       }
-    } catch (error) {
-      setResult({
-        success: false,
-        message: error instanceof Error ? error.message : 'Import failed'
-      })
+    } } catch (error) {
+  setResult({
+    success: false,
+    message: error instanceof Error ? error.message : undefined
+  });
+}
+
     } finally {
       setIsProcessing(false)
     }
