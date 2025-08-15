@@ -80,7 +80,7 @@ export default function ExcelImport({ isOpen, onClose, onImport }: ExcelImportPr
       if (importResult.success) {
         // Clear form after successful import
         setTimeout(() => {
-          handleClose()
+          handleClose();
         }, 2000)
       }
     } } catch (error) {
@@ -89,7 +89,6 @@ export default function ExcelImport({ isOpen, onClose, onImport }: ExcelImportPr
     message: error instanceof Error ? error.message : undefined
   });
 }
-
     } finally {
       setIsProcessing(false)
     }
