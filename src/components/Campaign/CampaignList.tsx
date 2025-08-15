@@ -80,7 +80,10 @@ export default function CampaignList({
                     </h3>
                     {campaign.export_url && (
                       <span title="Campaign exported">
+  <<span title="Campaign exported">
   <ExternalLink className="ml-2 w-4 h-4 text-green-500" />
+</span>
+>
 </span>
 
                     )}
