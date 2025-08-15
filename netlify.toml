@@ -1,9 +1,9 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "npm run build && npm run export"
+  publish = "out"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.16.0"
   NPM_FLAGS = "--production=false"
 
 [[redirects]]
@@ -11,11 +11,9 @@
   to = "/index.html"
   status = 200
 
-# Netlify Functions for serverless backend operations
 [functions]
   directory = "netlify/functions"
 
-# Headers for security and performance
 [[headers]]
   for = "/*"
   [headers.values]
@@ -25,7 +23,6 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co https://*.openstreetmap.org; font-src 'self' data:;"
 
-# Static file caching
 [[headers]]
   for = "/static/*"
   [headers.values]

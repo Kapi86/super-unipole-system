@@ -81,8 +81,7 @@ export default function ExcelImport({ isOpen, onClose, onImport }: ExcelImportPr
         // Clear form after successful import
         setTimeout(() => {
           handleClose();
-        }, 2000)
-      }
+        }, 2000);
     } } catch (error) {
   setResult({
     success: false,

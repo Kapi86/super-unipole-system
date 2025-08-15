@@ -67,9 +67,15 @@ export default function CampaignList({
     <div className="bg-white rounded-lg shadow">
       <div className="divide-y divide-gray-200">
         {campaigns.map((campaign) => {
-          const campaignUnits = getUnitsForCampaign(campaign)
-          const isExpanded = expandedCampaign === campaign.id
-          
+          const campaignUnits = getUnitsForCampaign(campaign);
+         return (
+          <div key={campaigns.id}>{campaign.name}</div>
+        );
+      })}
+    </div>
+  </div>
+); 
+          const isExpanded = expandedCampaign === campaigns.id
           return (
             <div key={campaign.id} className="p-6">
               <div className="flex items-center justify-between">
